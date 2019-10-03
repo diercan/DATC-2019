@@ -1,5 +1,5 @@
 ## Proiect DATC
 Added scripts:
-	+ sync_repo.sh
-	+ commit_files.sh
++ sync_repo.sh
++ commit_files.sh
 
