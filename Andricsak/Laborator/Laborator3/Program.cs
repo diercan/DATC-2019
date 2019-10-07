@@ -21,8 +21,7 @@ namespace Laborator2
 
         static void init()
         {
-            string[] credentials= {"999965187573-m9ul85iejajitb29bs9ac7nlee6esk8i.apps.googleusercontent.com",
-            "Tc-k23aPtspXMJnwnApKtowQ"};
+            
 
             var credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
                 new ClientSecrets{
