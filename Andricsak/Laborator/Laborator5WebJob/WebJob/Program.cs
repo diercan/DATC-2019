@@ -10,8 +10,8 @@ namespace WebJob
     class Program
     {
         private static string storageConnectionString = "DefaultEndpointsProtocol=https;"
-                            + "AccountName=datcdemoluni"
-                            + ";AccountKey=0iC24GOBAlLYUmGebdyEcmrMdxAMvwtKkLmfNy4mjF7dpigvoXGMU2VSWxEpDUXi5H3czl3+Z2TAYaqpY0nAhw=="
+                            + "AccountName=<Account Name>"
+                            + ";AccountKey=<Account Key>"
                             + ";EndpointSuffix=core.windows.net";
         static void Main(string[] args)
         {
