@@ -14,8 +14,8 @@ namespace Services
         public StudentsService()
         {
             string storageConnectionString = "DefaultEndpointsProtocol=https;"
-                            + "AccountName=datcdemoluni"
-                            + ";AccountKey=0iC24GOBAlLYUmGebdyEcmrMdxAMvwtKkLmfNy4mjF7dpigvoXGMU2VSWxEpDUXi5H3czl3+Z2TAYaqpY0nAhw=="
+                            + "AccountName=<Your account name>"
+                            + ";AccountKey=<Your account key>"
                             + ";EndpointSuffix=core.windows.net";
 
             var account = CloudStorageAccount.Parse(storageConnectionString);
