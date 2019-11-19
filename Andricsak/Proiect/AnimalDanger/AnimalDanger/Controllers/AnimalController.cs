@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AnimalDangerApi.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,9 +14,14 @@ namespace AnimalDangerApi.Controllers
     {
         // GET: api/Animal
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Animal> Get()
         {
-            return new string[] { "value1", "value2" };
+            IEnumerable<Animal> animals = new List<Animal>()
+            {
+                 new Animal { Id = 1, Name = "Mazarica" },
+                 new Animal { Id = 2, Name = "Gigel" }
+            };
+            return animals;
         }
 
         // GET: api/Animal/5
