@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http.Cors;
+using AnimalDangerApi.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,6 +35,8 @@ namespace AnimalDanger
                        .AllowAnyMethod()
                        .AllowAnyHeader();
             }));
+
+            services.AddTransient<IAnimalRepo, AnimalRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

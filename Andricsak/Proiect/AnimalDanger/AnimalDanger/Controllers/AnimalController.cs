@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AnimalDangerApi.Models;
+using AnimalDangerApi.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace AnimalDangerApi.Controllers
 {
@@ -12,29 +14,37 @@ namespace AnimalDangerApi.Controllers
     [ApiController]
     public class AnimalController : ControllerBase
     {
+        private readonly IAnimalRepo _animalsRepo;
+        public AnimalController(IAnimalRepo animalsRepo)
+        {
+            _animalsRepo = animalsRepo;
+        }
         // GET: api/Animal
         [HttpGet]
-        public IEnumerable<Animal> Get()
+        public Task<IEnumerable<Animal>> Get()
         {
-            IEnumerable<Animal> animals = new List<Animal>()
-            {
-                 new Animal { Id = 1, Name = "Mazarica" },
-                 new Animal { Id = 2, Name = "Gigel" }
-            };
-            return animals;
+            return _animalsRepo.GetAllAnimals();
         }
 
         // GET: api/Animal/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public Task<Animal> Get(int id)
         {
-            return "value";
+            return _animalsRepo.RetrieveSingleEntity(Convert.ToString(id));
         }
 
         // POST: api/Animal
         [HttpPost]
         public void Post([FromBody] string value)
         {
+            try
+            {
+                var resultConverted = JsonConvert.DeserializeObject<Animal>(value);
+            }
+            catch(Exception)
+            {
+                Console.WriteLine("Not a valid response received.");
+            }
         }
 
         // PUT: api/Animal/5
