@@ -35,11 +35,18 @@ namespace AnimalDangerApi.Controllers
 
         // POST: api/Animal
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Animal value)
         {
+            value.PartitionKey =Convert.ToString(value.Type);
+            value.RowKey = Convert.ToString(value.Id);
+            if(value == null)
+            {
+                throw new Exception();
+            }
             try
             {
-                var resultConverted = JsonConvert.DeserializeObject<Animal>(value);
+               //var resultConverted = JsonConvert.DeserializeObject<Animal>(value);
+                _animalsRepo.InsertOrUpdate(value);
             }
             catch(Exception)
             {

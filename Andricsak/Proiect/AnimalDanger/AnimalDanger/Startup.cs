@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.WindowsAzure.Storage;
 
 namespace AnimalDanger
 {
@@ -37,6 +38,7 @@ namespace AnimalDanger
             }));
 
             services.AddTransient<IAnimalRepo, AnimalRepo>();
+            services.AddSingleton(CloudStorageAccount.Parse(Configuration.GetConnectionString("AzureConnectionString")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

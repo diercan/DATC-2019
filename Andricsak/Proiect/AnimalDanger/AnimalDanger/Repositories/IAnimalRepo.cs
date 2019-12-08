@@ -9,7 +9,7 @@ namespace AnimalDangerApi.Repositories
 {
     public interface IAnimalRepo
     {
-        public Task<TableResult> InsertOrMerge(Animal animal);
+        public Task<TableResult> InsertOrUpdate(Animal animal);
         public Task<Animal> RetrieveSingleEntity(string id);
         public Task<IEnumerable<Animal>> GetAllAnimals();
     }

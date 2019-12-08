@@ -13,13 +13,11 @@ namespace AnimalDangerApi.Repositories
         private CloudTable animalsTable;
         public AnimalRepo()
         {
-            string storageConnectionString = "DefaultEndpointsProtocol=https;"
-                            + "AccountName=<Your account name>"
-                            + ";AccountKey=<Your account key>"
-                            + ";EndpointSuffix=core.windows.net";
+            string storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=animaldanger;AccountKey=eu+i0X92PnCCcrPXYdEfzo/onHrgZheCxZY3xsO5mj4Amm1zwF2bEIYpVY7aknILcZETcysR5hDHtN3qokhoXg==;EndpointSuffix=core.windows.net";
 
             var account = CloudStorageAccount.Parse(storageConnectionString);
             var tableClient = account.CreateCloudTableClient();
+            animalsTable = tableClient.GetTableReference("Animals");
         }
 
         public async Task<IEnumerable<Animal>> GetAllAnimals()
@@ -43,14 +41,14 @@ namespace AnimalDangerApi.Repositories
             return animals;
         }
 
-        public async Task<TableResult> InsertOrMerge(Animal animal)
+        public async Task<TableResult> InsertOrUpdate(Animal animal)
         {
             if (animalsTable == null)
             {
                 Console.WriteLine("Table doesn't exist!");
                 throw new Exception();
             }
-            var insertOperation = TableOperation.Insert(animal);
+            var insertOperation = TableOperation.InsertOrMerge(animal);
             return await animalsTable.ExecuteAsync(insertOperation);
         }
 

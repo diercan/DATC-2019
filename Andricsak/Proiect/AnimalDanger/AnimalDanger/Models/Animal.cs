@@ -9,7 +9,8 @@ namespace AnimalDangerApi.Models
     public class Animal : TableEntity
     {
         public int Id { get; set; }
-        public double[] Location { get; set; }
+        public double Long { get; set; }
+        public double Lat { get; set; }
         public string Name { get; set; }
         public AnimalType Type { get; set; }
     }
