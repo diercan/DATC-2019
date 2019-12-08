@@ -14,7 +14,7 @@ export class ViewAnimals extends  Component {
   }
 
   async populateAnimalData() {
-    const response = await fetch('https://localhost:44339/api/Animal');
+    const response = await fetch('https://animaldangerapi.azurewebsites.net/api/Animal');
     const data = await response.json();
     console.log(data);
     this.setState({ animalList: data, loading: false });

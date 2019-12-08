@@ -41,7 +41,7 @@ export class AddAnimal extends React.Component {
         console.log(json)
         axios({
         method: 'post', 
-        url: 'https://localhost:44339/api/Animal', 
+        url: 'https://animaldangerapi.azurewebsites.net/api/Animal', 
         headers:{'Content-Type': 'application/json; charset=utf-8'},
         data: json  
         })
