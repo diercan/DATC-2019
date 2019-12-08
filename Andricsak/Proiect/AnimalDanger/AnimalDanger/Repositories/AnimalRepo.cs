@@ -13,7 +13,7 @@ namespace AnimalDangerApi.Repositories
         private CloudTable animalsTable;
         public AnimalRepo()
         {
-            string storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=animaldanger;AccountKey=eu+i0X92PnCCcrPXYdEfzo/onHrgZheCxZY3xsO5mj4Amm1zwF2bEIYpVY7aknILcZETcysR5hDHtN3qokhoXg==;EndpointSuffix=core.windows.net";
+            string storageConnectionString = "<API key>";
 
             var account = CloudStorageAccount.Parse(storageConnectionString);
             var tableClient = account.CreateCloudTableClient();
