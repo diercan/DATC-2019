@@ -1,0 +1,6 @@
+LOADED LAMBDA:
+upload_file_curl.py
+
+RUN cURL:
+curl -vX POST -d @img_base64.txt -H "Content-Type: application/json"  https://0cxr9anbqk.execute-api.eu-central-1.amazonaws.com/dev/upload-data
+
