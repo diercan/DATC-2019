@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "S3-interface-data",
-    "version": "2019-12-14T12:14:45Z"
+    "version": "2019-12-14T14:19:51Z"
   },
   "servers": [
     {
@@ -189,7 +189,7 @@
       }
     },
     "/get-data": {
-      "get": {
+      "post": {
         "responses": {
           "200": {
             "description": "200 response",
@@ -203,71 +203,16 @@
           }
         },
         "x-amazon-apigateway-integration": {
-          "credentials": "arn:aws:iam::494212612400:role/ProjDATCLambda",
-          "uri": "arn:aws:apigateway:eu-central-1:s3:path/proj-datc-bucket/unknown.png",
-          "responses": {
-            "2\\d{2}": {
-              "statusCode": "200",
-              "responseParameters": {
-                "method.response.header.Access-Control-Allow-Origin": "'*'"
-              },
-              "responseTemplates": {
-                "application/json": "{\n   \"image\": \"$input.body\"\n}"
-              }
-            }
-          },
-          "passthroughBehavior": "when_no_match",
-          "httpMethod": "GET",
-          "contentHandling": "CONVERT_TO_TEXT",
-          "type": "aws"
-        }
-      },
-      "options": {
-        "responses": {
-          "200": {
-            "description": "200 response",
-            "headers": {
-              "Access-Control-Allow-Origin": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "Access-Control-Allow-Methods": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "Access-Control-Allow-Headers": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Empty"
-                }
-              }
-            }
-          }
-        },
-        "x-amazon-apigateway-integration": {
+          "uri": "arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:494212612400:function:GetFileFromS3/invocations",
           "responses": {
             "default": {
-              "statusCode": "200",
-              "responseParameters": {
-                "method.response.header.Access-Control-Allow-Methods": "'GET,OPTIONS'",
-                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
-                "method.response.header.Access-Control-Allow-Origin": "'*'"
-              }
+              "statusCode": "200"
             }
           },
           "passthroughBehavior": "when_no_match",
-          "requestTemplates": {
-            "application/json": "{\"statusCode\": 200}"
-          },
-          "type": "mock"
+          "httpMethod": "POST",
+          "contentHandling": "CONVERT_TO_TEXT",
+          "type": "aws"
         }
       }
     },
@@ -296,98 +241,6 @@
           "httpMethod": "POST",
           "contentHandling": "CONVERT_TO_TEXT",
           "type": "aws"
-        }
-      }
-    },
-    "/get-data/{file}": {
-      "get": {
-        "parameters": [
-          {
-            "name": "file",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Empty"
-                }
-              }
-            }
-          }
-        },
-        "x-amazon-apigateway-integration": {
-          "credentials": "arn:aws:iam::494212612400:role/ProjDATCLambda",
-          "uri": "arn:aws:apigateway:eu-central-1:s3:path/proj-datc-bucket/{file}",
-          "responses": {
-            "2\\d{2}": {
-              "statusCode": "200",
-              "responseTemplates": {
-                "application/json": "{\n   \"image\": \"$input.body\"\n}"
-              }
-            }
-          },
-          "requestParameters": {
-            "integration.request.path.file": "method.request.path.file"
-          },
-          "passthroughBehavior": "when_no_match",
-          "httpMethod": "GET",
-          "type": "aws"
-        }
-      },
-      "options": {
-        "responses": {
-          "200": {
-            "description": "200 response",
-            "headers": {
-              "Access-Control-Allow-Origin": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "Access-Control-Allow-Methods": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "Access-Control-Allow-Headers": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Empty"
-                }
-              }
-            }
-          }
-        },
-        "x-amazon-apigateway-integration": {
-          "responses": {
-            "default": {
-              "statusCode": "200",
-              "responseParameters": {
-                "method.response.header.Access-Control-Allow-Methods": "'GET,OPTIONS'",
-                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
-                "method.response.header.Access-Control-Allow-Origin": "'*'"
-              }
-            }
-          },
-          "passthroughBehavior": "when_no_match",
-          "requestTemplates": {
-            "application/json": "{\"statusCode\": 200}"
-          },
-          "type": "mock"
         }
       }
     },
