@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "S3-interface-data",
-    "version": "2019-12-13T21:16:56Z"
+    "version": "2019-12-14T10:59:27Z"
   },
   "servers": [
     {
@@ -15,6 +15,34 @@
     }
   ],
   "paths": {
+    "/insert-info": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
+              }
+            }
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "uri": "arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:494212612400:function:UploadDataToDynamoDB/invocations",
+          "responses": {
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "httpMethod": "POST",
+          "contentHandling": "CONVERT_TO_TEXT",
+          "type": "aws"
+        }
+      }
+    },
     "/upload-data": {
       "post": {
         "responses": {
@@ -104,6 +132,34 @@
         }
       }
     },
+    "/get-info": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
+              }
+            }
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "uri": "arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:494212612400:function:GetDataFromDynamoDB/invocations",
+          "responses": {
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "httpMethod": "POST",
+          "contentHandling": "CONVERT_TO_TEXT",
+          "type": "aws"
+        }
+      }
+    },
     "/get-data": {
       "get": {
         "responses": {
@@ -187,6 +243,34 @@
         }
       }
     },
+    "/update-info": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
+              }
+            }
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "uri": "arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:494212612400:function:UpdateDataInDynamoDB/invocations",
+          "responses": {
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "httpMethod": "POST",
+          "contentHandling": "CONVERT_TO_TEXT",
+          "type": "aws"
+        }
+      }
+    },
     "/get-data/{file}": {
       "get": {
         "parameters": [
@@ -227,45 +311,6 @@
           },
           "passthroughBehavior": "when_no_match",
           "httpMethod": "GET",
-          "type": "aws"
-        }
-      },
-      "delete": {
-        "parameters": [
-          {
-            "name": "file",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Empty"
-                }
-              }
-            }
-          }
-        },
-        "x-amazon-apigateway-integration": {
-          "credentials": "arn:aws:iam::494212612400:role/ProjDATCLambda",
-          "uri": "arn:aws:apigateway:eu-central-1:s3:path/proj-datc-bucket/{file}",
-          "responses": {
-            "default": {
-              "statusCode": "200"
-            }
-          },
-          "requestParameters": {
-            "integration.request.path.file": "method.request.path.file"
-          },
-          "passthroughBehavior": "when_no_match",
-          "httpMethod": "DELETE",
           "type": "aws"
         }
       },
@@ -315,6 +360,75 @@
             "application/json": "{\"statusCode\": 200}"
           },
           "type": "mock"
+        }
+      }
+    },
+    "/delete-info": {
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
+              }
+            }
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "uri": "arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:494212612400:function:DeleteDataFromDynamoDB/invocations",
+          "responses": {
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "httpMethod": "POST",
+          "contentHandling": "CONVERT_TO_TEXT",
+          "type": "aws"
+        }
+      }
+    },
+    "/delete-data/{file}": {
+      "delete": {
+        "parameters": [
+          {
+            "name": "file",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
+              }
+            }
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "credentials": "arn:aws:iam::494212612400:role/ProjDATCLambda",
+          "uri": "arn:aws:apigateway:eu-central-1:s3:path/proj-datc-bucket/{file}",
+          "responses": {
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.path.file": "method.request.path.file"
+          },
+          "passthroughBehavior": "when_no_match",
+          "httpMethod": "DELETE",
+          "type": "aws"
         }
       }
     }
