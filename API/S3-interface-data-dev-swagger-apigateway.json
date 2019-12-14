@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "2019-12-14T14:31:05Z",
+    "version": "2019-12-14T14:43:24Z",
     "title": "S3-interface-data"
   },
   "host": "0cxr9anbqk.execute-api.eu-central-1.amazonaws.com",

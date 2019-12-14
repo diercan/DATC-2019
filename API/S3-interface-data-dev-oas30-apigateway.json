@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "S3-interface-data",
-    "version": "2019-12-14T14:31:05Z"
+    "version": "2019-12-14T14:43:24Z"
   },
   "servers": [
     {
