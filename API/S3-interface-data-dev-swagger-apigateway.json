@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "2019-12-14T10:59:27Z",
+    "version": "2019-12-14T12:14:45Z",
     "title": "S3-interface-data"
   },
   "host": "0cxr9anbqk.execute-api.eu-central-1.amazonaws.com",
@@ -280,6 +280,33 @@
         },
         "x-amazon-apigateway-integration": {
           "uri": "arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:494212612400:function:UploadDataToDynamoDB/invocations",
+          "responses": {
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "httpMethod": "POST",
+          "contentHandling": "CONVERT_TO_TEXT",
+          "type": "aws"
+        }
+      }
+    },
+    "/insert-voter": {
+      "post": {
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "uri": "arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:494212612400:function:UploadVotersToDynamoDB/invocations",
           "responses": {
             "default": {
               "statusCode": "200"

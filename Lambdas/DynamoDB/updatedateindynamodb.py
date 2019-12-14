@@ -6,6 +6,13 @@ def lambda_handler(event, context):
     dynamoDB = boto3.resource('dynamodb')
     dynamoTable = dynamoDB.Table('Candidati')
     
+    response = dynamoTable.get_item(
+            Key = {
+                "Partid": event["Partid"],
+                "NumeCandidat": event["NumeCandidat"]
+            }
+        )
+    
     new_varsta = event["Varsta"]
     
     dynamoTable.update_item(
@@ -13,10 +20,11 @@ def lambda_handler(event, context):
             "Partid": event["Partid"],
             "NumeCandidat": event["NumeCandidat"]
         },
-        UpdateExpression="set Varsta = :v, Proiect = :p",
+        UpdateExpression="set Varsta = :v, Proiect = :p, Voturi = :t",
         ExpressionAttributeValues={
             ':v': event["Varsta"],
-            ':p': event["Proiect"]
+            ':p': event["Proiect"],
+            ':t': response["Item"]["Voturi"]
         },
         ReturnValues="UPDATED_NEW"
     )
