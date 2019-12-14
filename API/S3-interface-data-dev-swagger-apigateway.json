@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "2019-12-14T14:19:51Z",
+    "version": "2019-12-14T14:31:05Z",
     "title": "S3-interface-data"
   },
   "host": "0cxr9anbqk.execute-api.eu-central-1.amazonaws.com",
@@ -10,18 +10,10 @@
     "https"
   ],
   "paths": {
-    "/delete-data/{file}": {
+    "/delete-data": {
       "delete": {
         "produces": [
           "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "file",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
         ],
         "responses": {
           "200": {
@@ -32,18 +24,15 @@
           }
         },
         "x-amazon-apigateway-integration": {
-          "credentials": "arn:aws:iam::494212612400:role/ProjDATCLambda",
-          "uri": "arn:aws:apigateway:eu-central-1:s3:path/proj-datc-bucket/{file}",
+          "uri": "arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:494212612400:function:DeleteDataFromS3/invocations",
           "responses": {
             "default": {
               "statusCode": "200"
             }
           },
-          "requestParameters": {
-            "integration.request.path.file": "method.request.path.file"
-          },
           "passthroughBehavior": "when_no_match",
-          "httpMethod": "DELETE",
+          "httpMethod": "POST",
+          "contentHandling": "CONVERT_TO_TEXT",
           "type": "aws"
         }
       }

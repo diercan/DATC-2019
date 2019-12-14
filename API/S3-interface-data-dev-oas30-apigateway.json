@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "S3-interface-data",
-    "version": "2019-12-14T14:19:51Z"
+    "version": "2019-12-14T14:31:05Z"
   },
   "servers": [
     {
@@ -244,6 +244,34 @@
         }
       }
     },
+    "/delete-data": {
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
+              }
+            }
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "uri": "arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:494212612400:function:DeleteDataFromS3/invocations",
+          "responses": {
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "httpMethod": "POST",
+          "contentHandling": "CONVERT_TO_TEXT",
+          "type": "aws"
+        }
+      }
+    },
     "/delete-info": {
       "delete": {
         "responses": {
@@ -268,47 +296,6 @@
           "passthroughBehavior": "when_no_match",
           "httpMethod": "POST",
           "contentHandling": "CONVERT_TO_TEXT",
-          "type": "aws"
-        }
-      }
-    },
-    "/delete-data/{file}": {
-      "delete": {
-        "parameters": [
-          {
-            "name": "file",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Empty"
-                }
-              }
-            }
-          }
-        },
-        "x-amazon-apigateway-integration": {
-          "credentials": "arn:aws:iam::494212612400:role/ProjDATCLambda",
-          "uri": "arn:aws:apigateway:eu-central-1:s3:path/proj-datc-bucket/{file}",
-          "responses": {
-            "default": {
-              "statusCode": "200"
-            }
-          },
-          "requestParameters": {
-            "integration.request.path.file": "method.request.path.file"
-          },
-          "passthroughBehavior": "when_no_match",
-          "httpMethod": "DELETE",
           "type": "aws"
         }
       }
