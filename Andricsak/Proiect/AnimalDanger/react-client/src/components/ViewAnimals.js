@@ -18,12 +18,13 @@ export class ViewAnimals extends  Component {
   
   constructor(props) {
     super(props);
-    this.state = { animalList: [], loading: true ,zoom: 13,alert:false};
+    this.state = { animalList: [], loading: true ,zoom: 13,alertsList: [],alert:false};
   }
 
   componentDidMount() {
     this.populateAnimalData(); 
     // setInterval(this.populateAnimalData,10000); 
+  //  setInterval(this._handleAlert,1000);
   }
 
    populateAnimalData = async()=> {
@@ -33,12 +34,23 @@ export class ViewAnimals extends  Component {
     this.setState({ animalList: data, loading: false });
   }
 
-  _handleAlert=()=>{
-    if(alert === false)
-    {
-      alert('Animal in the city');
+  _showAlert=(description)=>{
+
+    if(this.state.alert === false){
+ 
+      alert(`DANGER :${description}!`);
     }
   };
+  
+ _handleAlert=async()=>{
+  const response = await fetch('https://animaldangerapi.azurewebsites.net/api/Animal/Alerts');
+  const data = await response.json();
+  console.log(data);
+  if(data != null){
+    this._showAlert(data[0].description);
+    this.setState({alert:true});
+  }
+ };
 
 
   render() {
