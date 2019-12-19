@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router';
+import Login from './components/Login';
 import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { AddAnimal } from './components/AddAnimal';
@@ -11,7 +12,8 @@ export default class App extends React.Component {
   render() {
     return (
       <Layout>
-        <Route exact path='/' component={Home} />
+       <Route path="/" exact component={Login} />
+        <Route exact path='/Home' component={Home} />
         <Route path='/AddAnimal' component={AddAnimal} />
         <Route path='/ViewAnimals' component={ViewAnimals} />
       </Layout>
