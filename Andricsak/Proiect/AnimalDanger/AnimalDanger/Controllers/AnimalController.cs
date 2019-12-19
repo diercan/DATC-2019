@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using AnimalDangerApi.Models;
 using AnimalDangerApi.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.ServiceBus;
 using Newtonsoft.Json;
 
 namespace AnimalDangerApi.Controllers
@@ -15,9 +17,11 @@ namespace AnimalDangerApi.Controllers
     public class AnimalController : ControllerBase
     {
         private readonly IAnimalRepo _animalsRepo;
-        public AnimalController(IAnimalRepo animalsRepo)
+        private readonly AlertRepo _alertsRepo;
+        public AnimalController(IAnimalRepo animalsRepo,AlertRepo alertsRepo)
         {
             _animalsRepo = animalsRepo;
+            _alertsRepo = alertsRepo;
         }
         // GET: api/Animal
         [HttpGet]
@@ -41,7 +45,7 @@ namespace AnimalDangerApi.Controllers
             value.RowKey = Convert.ToString(value.Id);
             if(value == null)
             {
-                throw new Exception();
+                return;
             }
             try
             {
@@ -52,6 +56,29 @@ namespace AnimalDangerApi.Controllers
             {
                 Console.WriteLine("Not a valid response received.");
             }
+        }
+
+        // POST: api/Animal
+        [HttpPost]
+        [Route("PostAlert")]
+        public async Task PostAlert([FromBody] Alert value)
+        {
+            if (value == null)
+                return;
+            else
+            {
+                value.PartitionKey = value.City;
+                value.RowKey = Convert.ToString(value.Id);
+
+                await _alertsRepo.InsertOrUpdate(value);       
+            }
+        }
+        // GET: api/Animal/Alerts
+        [HttpGet]
+        [Route("Alerts")]
+        public Task<IEnumerable<Alert>> GetAlerts()
+        {
+            return _alertsRepo.GetAllAlerts();
         }
 
         // PUT: api/Animal/5

@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/DATC-2019/Andricsak/Proiect/AnimalDanger/react-client/static/css/main.a8cd3667.chunk.css",
+    "main.js": "/DATC-2019/Andricsak/Proiect/AnimalDanger/react-client/static/js/main.767cb65b.chunk.js",
+    "main.js.map": "/DATC-2019/Andricsak/Proiect/AnimalDanger/react-client/static/js/main.767cb65b.chunk.js.map",
+    "runtime-main.js": "/DATC-2019/Andricsak/Proiect/AnimalDanger/react-client/static/js/runtime-main.297d04f9.js",
+    "runtime-main.js.map": "/DATC-2019/Andricsak/Proiect/AnimalDanger/react-client/static/js/runtime-main.297d04f9.js.map",
+    "static/css/2.833dd627.chunk.css": "/DATC-2019/Andricsak/Proiect/AnimalDanger/react-client/static/css/2.833dd627.chunk.css",
+    "static/js/2.08cb4003.chunk.js": "/DATC-2019/Andricsak/Proiect/AnimalDanger/react-client/static/js/2.08cb4003.chunk.js",
+    "static/js/2.08cb4003.chunk.js.map": "/DATC-2019/Andricsak/Proiect/AnimalDanger/react-client/static/js/2.08cb4003.chunk.js.map",
+    "index.html": "/DATC-2019/Andricsak/Proiect/AnimalDanger/react-client/index.html",
+    "precache-manifest.33e5e80196ca2f57e47bf86f453e2024.js": "/DATC-2019/Andricsak/Proiect/AnimalDanger/react-client/precache-manifest.33e5e80196ca2f57e47bf86f453e2024.js",
+    "service-worker.js": "/DATC-2019/Andricsak/Proiect/AnimalDanger/react-client/service-worker.js",
+    "static/css/2.833dd627.chunk.css.map": "/DATC-2019/Andricsak/Proiect/AnimalDanger/react-client/static/css/2.833dd627.chunk.css.map",
+    "static/css/main.a8cd3667.chunk.css.map": "/DATC-2019/Andricsak/Proiect/AnimalDanger/react-client/static/css/main.a8cd3667.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.297d04f9.js",
+    "static/css/2.833dd627.chunk.css",
+    "static/js/2.08cb4003.chunk.js",
+    "static/css/main.a8cd3667.chunk.css",
+    "static/js/main.767cb65b.chunk.js"
+  ]
+}

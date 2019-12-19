@@ -38,6 +38,7 @@ namespace AnimalDanger
             }));
 
             services.AddTransient<IAnimalRepo, AnimalRepo>();
+            services.AddTransient<AlertRepo>();
             services.AddSingleton(CloudStorageAccount.Parse(Configuration.GetConnectionString("AzureConnectionString")));
         }
 
