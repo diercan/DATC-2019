@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router';
-import Login from './components/Login';
+import { Login } from './components/Login';
 import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { AddAnimal } from './components/AddAnimal';

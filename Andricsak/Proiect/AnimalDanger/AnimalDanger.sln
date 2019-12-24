@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimalDangerApi", "AnimalDanger\AnimalDangerApi.csproj", "{CF7098D2-4253-4ABA-8762-51991217129F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundWorker", "BackgroundWorker\BackgroundWorker.csproj", "{7404DBD1-9974-47B6-843D-2F7438592B1E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CF7098D2-4253-4ABA-8762-51991217129F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF7098D2-4253-4ABA-8762-51991217129F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF7098D2-4253-4ABA-8762-51991217129F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7404DBD1-9974-47B6-843D-2F7438592B1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7404DBD1-9974-47B6-843D-2F7438592B1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7404DBD1-9974-47B6-843D-2F7438592B1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7404DBD1-9974-47B6-843D-2F7438592B1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

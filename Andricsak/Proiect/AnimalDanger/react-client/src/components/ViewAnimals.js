@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import { Map, TileLayer, Marker, Popup,Circle,CircleMarker,Rectangle,Polygon } from 'react-leaflet';
+import { Map, TileLayer, Marker, Popup,Polygon } from 'react-leaflet';
 
-// - 45.747505,21.225825
-// 	- 45.746942,21.225825
-// 	- 45.747056,21.227981
-// 	- 45.747618,21.227970
-
-
+// default safe zone 
 const polygon = [
   [45.751714,21.219859],
 	 [45.742850,21.219516],
@@ -42,6 +37,7 @@ export class ViewAnimals extends  Component {
     }
   };
   
+  // get the animals present in the area
  _handleAlert=async()=>{
   const response = await fetch('https://animaldangerapi.azurewebsites.net/api/Animal/Alerts');
   const data = await response.json();
@@ -49,6 +45,10 @@ export class ViewAnimals extends  Component {
   if(data != null){
     this._showAlert(data[0].description);
     this.setState({alert:true});
+  }
+  else
+  {
+    this.setState({alert:false})
   }
  };
 
