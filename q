@@ -1,0 +1,167 @@
+warning: LF will be replaced by CRLF in Andricsak/Proiect/AnimalDanger/react-client/package-lock.json.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in Andricsak/Proiect/AnimalDanger/react-client/package.json.
+The file will have its original line endings in your working directory
+[1mdiff --git a/Andricsak/Proiect/AnimalDanger/react-client/package-lock.json b/Andricsak/Proiect/AnimalDanger/react-client/package-lock.json[m
+[1mindex c5704df..1ba9b7a 100644[m
+[1m--- a/Andricsak/Proiect/AnimalDanger/react-client/package-lock.json[m
+[1m+++ b/Andricsak/Proiect/AnimalDanger/react-client/package-lock.json[m
+[36m@@ -4501,6 +4501,12 @@[m
+         "minimalistic-crypto-utils": "^1.0.0"[m
+       }[m
+     },[m
+[32m+[m[32m    "email-addresses": {[m
+[32m+[m[32m      "version": "3.1.0",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/email-addresses/-/email-addresses-3.1.0.tgz",[m
+[32m+[m[32m      "integrity": "sha512-k0/r7GrWVL32kZlGwfPNgB2Y/mMXVTq/decgLczm/j34whdaspNrZO8CnXPf1laaHxI6ptUlsnAxN+UAPw+fzg==",[m
+[32m+[m[32m      "dev": true[m
+[32m+[m[32m    },[m
+     "emoji-regex": {[m
+       "version": "8.0.0",[m
+       "resolved": "https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz",[m
+[36m@@ -5532,6 +5538,33 @@[m
+         "schema-utils": "^1.0.0"[m
+       }[m
+     },[m
+[32m+[m[32m    "filename-reserved-regex": {[m
+[32m+[m[32m      "version": "1.0.0",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/filename-reserved-regex/-/filename-reserved-regex-1.0.0.tgz",[m
+[32m+[m[32m      "integrity": "sha1-5hz4BfDeHJhFZ9A4bcXfUO5a9+Q=",[m
+[32m+[m[32m      "dev": true[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "filenamify": {[m
+[32m+[m[32m      "version": "1.2.1",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/filenamify/-/filenamify-1.2.1.tgz",[m
+[32m+[m[32m      "integrity": "sha1-qfL/0RxQO+0wABUCknI3jx8TZaU=",[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "requires": {[m
+[32m+[m[32m        "filename-reserved-regex": "^1.0.0",[m
+[32m+[m[32m        "strip-outer": "^1.0.0",[m
+[32m+[m[32m        "trim-repeated": "^1.0.0"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "filenamify-url": {[m
+[32m+[m[32m      "version": "1.0.0",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/filenamify-url/-/filenamify-url-1.0.0.tgz",[m
+[32m+[m[32m      "integrity": "sha1-syvYExnvWGO3MHi+1Q9GpPeXX1A=",[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "requires": {[m
+[32m+[m[32m        "filenamify": "^1.0.0",[m
+[32m+[m[32m        "humanize-url": "^1.0.0"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+     "filesize": {[m
+       "version": "3.6.1",[m
+       "resolved": "https://registry.npmjs.org/filesize/-/filesize-3.6.1.tgz",[m
+[36m@@ -5874,6 +5907,43 @@[m
+         "assert-plus": "^1.0.0"[m
+       }[m
+     },[m
+[32m+[m[32m    "gh-pages": {[m
+[32m+[m[32m      "version": "2.1.1",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/gh-pages/-/gh-pages-2.1.1.tgz",[m
+[32m+[m[32m      "integrity": "sha512-yNW2SFp9xGRP/8Sk2WXuLI/Gn92oOL4HBgudn6PsqAnuWT90Y1tozJoTfX1WdrDSW5Rb90kLVOf5mm9KJ/2fDw==",[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "requires": {[m
+[32m+[m[32m        "async": "^2.6.1",[m
+[32m+[m[32m        "commander": "^2.18.0",[m
+[32m+[m[32m        "email-addresses": "^3.0.1",[m
+[32m+[m[32m        "filenamify-url": "^1.0.0",[m
+[32m+[m[32m        "fs-extra": "^7.0.0",[m
+[32m+[m[32m        "globby": "^6.1.0",[m
+[32m+[m[32m        "graceful-fs": "^4.1.11",[m
+[32m+[m[32m        "rimraf": "^2.6.2"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "dependencies": {[m
+[32m+[m[32m        "globby": {[m
+[32m+[m[32m          "version": "6.1.0",[m
+[32m+[m[32m          "resolved": "https://registry.npmjs.org/globby/-/globby-6.1.0.tgz",[m
+[32m+[m[32m          "integrity": "sha1-9abXDoOV4hyFj7BInWTfAkJNUGw=",[m
+[32m+[m[32m          "dev": true,[m
+[32m+[m[32m          "requires": {[m
+[32m+[m[32m            "array-union": "^1.0.1",[m
+[32m+[m[32m            "glob": "^7.0.3",[m
+[32m+[m[32m            "object-assign": "^4.0.1",[m
+[32m+[m[32m            "pify": "^2.0.0",[m
+[32m+[m[32m            "pinkie-promise": "^2.0.0"[m
+[32m+[m[32m          }[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "pify": {[m
+[32m+[m[32m          "version": "2.3.0",[m
+[32m+[m[32m          "resolved": "https://registry.npmjs.org/pify/-/pify-2.3.0.tgz",[m
+[32m+[m[32m          "integrity": "sha1-7RQaasBDqEnqWISY59yosVMw6Qw=",[m
+[32m+[m[32m          "dev": true[m
+[32m+[m[32m        }[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+     "glob": {[m
+       "version": "7.1.6",[m
+       "resolved": "https://registry.npmjs.org/glob/-/glob-7.1.6.tgz",[m
+[36m@@ -6360,6 +6430,16 @@[m
+       "resolved": "https://registry.npmjs.org/https-browserify/-/https-browserify-1.0.0.tgz",[m
+       "integrity": "sha1-7AbBDgo0wPL68Zn3/X/Hj//QPHM="[m
+     },[m
+[32m+[m[32m    "humanize-url": {[m
+[32m+[m[32m      "version": "1.0.1",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/humanize-url/-/humanize-url-1.0.1.tgz",[m
+[32m+[m[32m      "integrity": "sha1-9KuZ4NKIF0yk4eUEB8VfuuRk7/8=",[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "requires": {[m
+[32m+[m[32m        "normalize-url": "^1.0.0",[m
+[32m+[m[32m        "strip-url-auth": "^1.0.0"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+     "iconv-lite": {[m
+       "version": "0.4.24",[m
+       "resolved": "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.24.tgz",[m
+[36m@@ -12348,6 +12428,21 @@[m
+       "resolved": "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-3.0.1.tgz",[m
+       "integrity": "sha512-VTyMAUfdm047mwKl+u79WIdrZxtFtn+nBxHeb844XBQ9uMNTuTHdx2hc5RiAJYqwTj3wc/xe5HLSdJSkJ+WfZw=="[m
+     },[m
+[32m+[m[32m    "strip-outer": {[m
+[32m+[m[32m      "version": "1.0.1",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/strip-outer/-/strip-outer-1.0.1.tgz",[m
+[32m+[m[32m      "integrity": "sha512-k55yxKHwaXnpYGsOzg4Vl8+tDrWylxDEpknGjhTiZB8dFRU5rTo9CAzeycivxV3s+zlTKwrs6WxMxR95n26kwg==",[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "requires": {[m
+[32m+[m[32m        "escape-string-regexp": "^1.0.2"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "strip-url-auth": {[m
+[32m+[m[32m      "version": "1.0.1",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/strip-url-auth/-/strip-url-auth-1.0.1.tgz",[m
+[32m+[m[32m      "integrity": "sha1-IrD6OkE4WzO+PzMVUbu4N/oM164=",[m
+[32m+[m[32m      "dev": true[m
+[32m+[m[32m    },[m
+     "style-loader": {[m
+       "version": "1.0.0",[m
+       "resolved": "https://registry.npmjs.org/style-loader/-/style-loader-1.0.0.tgz",[m
+[36m@@ -12666,6 +12761,15 @@[m
+         "punycode": "^2.1.0"[m
+       }[m
+     },[m
+[32m+[m[32m    "trim-repeated": {[m
+[32m+[m[32m      "version": "1.0.0",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/trim-repeated/-/trim-repeated-1.0.0.tgz",[m
+[32m+[m[32m      "integrity": "sha1-42RqLqTokTEr9+rObPsFOAvAHCE=",[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "requires": {[m
+[32m+[m[32m        "escape-string-regexp": "^1.0.2"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+     "ts-pnp": {[m
+       "version": "1.1.4",[m
+       "resolved": "https://registry.npmjs.org/ts-pnp/-/ts-pnp-1.1.4.tgz",[m
+[1mdiff --git a/Andricsak/Proiect/AnimalDanger/react-client/package.json b/Andricsak/Proiect/AnimalDanger/react-client/package.json[m
+[1mindex 96d0da6..6fbe93e 100644[m
+[1m--- a/Andricsak/Proiect/AnimalDanger/react-client/package.json[m
+[1m+++ b/Andricsak/Proiect/AnimalDanger/react-client/package.json[m
+[36m@@ -38,5 +38,8 @@[m
+       "last 1 firefox version",[m
+       "last 1 safari version"[m
+     ][m
+[32m+[m[32m  },[m
+[32m+[m[32m  "devDependencies": {[m
+[32m+[m[32m    "gh-pages": "^2.1.1"[m
+   }[m
+ }[m
