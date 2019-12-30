@@ -6,9 +6,11 @@ export class Home extends Component {
   render () {
     return (
       <div>
-        <h1>Welcome to animal danger website!</h1>
-        <p>Here you can view if dangerous animals are inside your city!</p>
+        <h1>Welcome to animal danger administrator application!</h1>
+        <p>Here you can view if dangerous animals are inside a city!</p>
         </div>
     );
   }
 }
+
+
