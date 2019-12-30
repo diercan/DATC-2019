@@ -20,7 +20,7 @@ export class Login extends Component{
 
     const successCallback = this.onSuccess.bind(this);
     
-    window.gapi.load('auth2', () => {
+   window.gapi.load('auth2', ()  => {
       this.auth2 = window.gapi.auth2.init({
         client_id: '707554693086-onkdae6efl5saje0jj6n1h089n0j4ger.apps.googleusercontent.com',
       })
