@@ -3,33 +3,28 @@ import boto3
 
 def lambda_handler(event, context):
     
+    event = event["body-json"]
+    
+    # check if voter has already voted, if yes, deny vote
+    # check if voter is in the table with valid voters
     dynamoDB = boto3.resource('dynamodb')
     
     dynamoVotanti = dynamoDB.Table('Votanti')
     dynamoCandidati = dynamoDB.Table('Candidati')
+    
+    # table with voters that have the right to vote
+    dynamoCNPDB = dynamoDB.Table('CNPDataBase')
 
-    judet = event["Judet"]
     cnp = event["CNP"]
     
     partid = event["Partid"]
     nume_candidat = event["NumeCandidat"]
 
-    max_litere_judet = 2
     max_cifre_cnp = 13
-    
-    judet_gresit = {
-        'message':'Judetul trebuie sa fie format doar din doua litere'
-    }
-    
+
     cnp_gresit = {
-        'message':'CNP-ul trebuie sa fie format doar din 13 cifre'
+        'message':'false'
     }
-    
-    if len(judet) is not max_litere_judet or not judet.isalpha():
-        return {
-            'statusCode': 401,
-            'body': json.dumps(judet_gresit)
-        }
     
     if len(cnp) is not max_cifre_cnp or not cnp.isdigit():
         return {
@@ -45,8 +40,15 @@ def lambda_handler(event, context):
         }
     )
     
-    varsta = response["Item"]["Varsta"]
-    proiect = response["Item"]["Proiect"]
+    candidat_inexistent = {
+        'message': "false"
+    }
+    
+    if "Item" not in response:
+        return {
+            'statusCode': 406,
+            'body': json.dumps(candidat_inexistent)
+        }
     voturi = response["Item"]["Voturi"]
     
     voturi = int(voturi) + 1
@@ -56,10 +58,8 @@ def lambda_handler(event, context):
             "Partid": partid,
             "NumeCandidat": nume_candidat
         },
-        UpdateExpression="set Varsta = :v, Proiect = :p, Voturi = :t",
+        UpdateExpression="set Voturi = :t",
         ExpressionAttributeValues={
-            ':v': varsta,
-            ':p': proiect,
             ':t': str(voturi)
         },
         ReturnValues="UPDATED_NEW"
@@ -67,13 +67,12 @@ def lambda_handler(event, context):
     
     dynamoVotanti.put_item(
         Item = {
-            'Judet': judet,
             'CNP': cnp
         }
     )
     
     message = {
-        'message':'Votare efectuata cu success!'
+        'message':'true'
     }
     
     return {
