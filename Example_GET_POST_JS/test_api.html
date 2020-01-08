@@ -1,0 +1,71 @@
+<html>
+
+	<head>
+	<title> Test API </title>
+	</head>
+
+	<body>
+	
+		<h1>Latest entries</h1>
+		<div id="entries">
+		
+		</div>
+		
+		<h1>New entry</h1>
+		<form>
+			<input type="text" name="Partid" id="Partid">
+			<input type="text" name="NumeCandidat" id="NumeCandidat">
+			<input type="text" name="Varsta" id="Varsta">
+			<input type="text" name="Proiect" id="Proiect">
+			<input type="text" name="Voturi" id="Voturi">
+			
+			<button id='submitButton'>Submit</button>
+		</form>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script type="text/javascript">
+		
+			var API_URL_POST = 'https://0cxr9anbqk.execute-api.eu-central-1.amazonaws.com/dev/insert-info';
+			var API_URL_GET = 'https://0cxr9anbqk.execute-api.eu-central-1.amazonaws.com/dev/show-info';
+			
+			$(document).ready(function(){
+				
+				$.ajax({
+				
+					type: 'GET',
+					url: API_URL_GET,
+					
+					success: function(data){
+					
+						$('#entries').html('');
+						
+						$('#entries').append(data.body)
+					}
+				});
+			});
+			
+			$('#submitButton').on('click', function(){
+			
+				$.ajax({
+					type: 'POST',
+					url: API_URL_POST,
+					data: JSON.stringify({
+						"Partid":$('#Partid').val(),
+						"NumeCandidat":$('#NumeCandidat').val(),
+						"Varsta":$('#Varsta').val(),
+						"Proiect":$('#Proiect').val(),
+						"Voturi":$('#Voturi').val()			
+					}),
+					contentType: "application/json",
+					
+					success: function(data){
+						location.reload();
+					}	
+				});
+				
+				return false;
+				
+			});
+		</script>
+	</body>
+</html>
