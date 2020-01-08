@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="df_red">#dc3545</color>
+    <color name="df_danger">#dc3545</color>
+    <color name="formBg">#f0f0f0</color>
+    <color name="black_alpha_75">#bf000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="topColor">#3675F4</color>
+    <color name="voteActivityColor">#C1CAEC</color>
+</resources>

@@ -1,0 +1,6 @@
+This command inserts data in table 'Candidati'.
+Must take 'Partid', 'NumeCandidat', 'Varsta', 'Proiect' and 'Voturi'. 'Voturi' initial value must be 0.
+
+POST COMMAND:
+
+curl -X POST -H 'Content-Type: application/json' -d '{"Partid":"EXE", "NumeCandidat":"Marean", "Varsta":"33", "Proiect":"Bani la toata lumea", "Voturi":"0"}' https://0cxr9anbqk.execute-api.eu-central-1.amazonaws.com/dev/insert-info

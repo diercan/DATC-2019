@@ -1,0 +1,5 @@
+POST COMMAND:
+
+This command checks if the voter has already voted and if the voter has the right to vote.
+
+curl -X POST -H 'Content-type: application/json' -d '{"Judet":"TM", "CNP":"1111111111111"}' https://0cxr9anbqk.execute-api.eu-central-1.amazonaws.com/dev/check-voter

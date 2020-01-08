@@ -1,0 +1,5 @@
+POST COMMAND:
+This command uploads an image in S3 from base64 encoding.
+File after '@' must be formatted like the example file provided.
+
+curl -X POST -H 'Content-Type: application/json' -d @img_in_base64.json -H "Content-Type: application/json" https://0cxr9anbqk.execute-api.eu-central-1.amazonaws.com/dev/upload-data 

@@ -1,0 +1,5 @@
+POST COMMAND:
+
+This command inserts a new voter based on 'Judet', 'CNP', 'Partid' and 'NumeCandidat'. 'Judet' must contain only 2 letters, 'CNP' must contain 13 numbers.
+
+curl -X POST -H 'Content-Type: application/json' -d '{"Judet":"TM", "CNP":"1111111111111", "Partid":"EXE", "NumeCandidat":"Marean"}' https://0cxr9anbqk.execute-api.eu-central-1.amazonaws.com/dev/insert-voter

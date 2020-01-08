@@ -1,0 +1,5 @@
+POST COMMAND:
+
+This command inserts data for a person that has the right to vote.
+
+curl -X POST -H 'Content-type: application/json' -d '{"Judet":"TM", "CNP":"1111111111111"}' https://0cxr9anbqk.execute-api.eu-central-1.amazonaws.com/dev/insert-voter-right

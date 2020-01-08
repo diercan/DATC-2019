@@ -1,0 +1,24 @@
+﻿<div class="jumbotron">
+  <h2 align="center">Rapoarte</h2>
+  <h3 align="center" id="startVotFalse">Votul încă nu a început</h3>
+  <h3 align="center" id="startVotTrue">Aveți mai jos statistici legate de actualele alegeri</h3>
+
+  <div id="startVotTrue">
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+  </div>
+
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Nume</th>
+        <th>Procentaj</th>
+      </tr>
+    </thead>
+    <tbody id="candidati"></tbody>
+  </table>
+</div>
+
+<script language="JavaScript" type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="~/scripts/rapoarte.js"></script>

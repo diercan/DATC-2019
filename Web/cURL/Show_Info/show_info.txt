@@ -1,0 +1,5 @@
+COMMAND:
+
+This command show data of candidates in table
+
+curl -X GET https://0cxr9anbqk.execute-api.eu-central-1.amazonaws.com/dev/show-info

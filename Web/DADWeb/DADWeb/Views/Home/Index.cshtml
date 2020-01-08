@@ -1,0 +1,86 @@
+﻿&nbsp;
+<div>
+  <img class="mySlides1 sliding-images-left" src="images/flag.jpg" style="width:30%; height: 200px">
+  <img class="mySlides1 sliding-images-left" src="images/choose.jpg" style="width:30%; height: 200px">
+  <img class="mySlides1 sliding-images-left" src="images/stampila.jpg" style="width:30%; height: 200px">
+</div>
+
+<div>
+  <img class="mySlides2 sliding-images-left-down" src="images/oameniflag.jpg" style="width:30%; height: 200px">
+  <img class="mySlides2 sliding-images-left-down" src="images/militaryjpg.jpg" style="width:30%; height: 200px">
+  <img class="mySlides2 sliding-images-left-down" src="images/oameni.jpg" style="width:30%; height:200px">
+</div>
+
+<div>
+  <img class="mySlides3 sliding-images-left-bottom" src="images/speech.jpg" style="width:30%; height: 200px">
+  <img class="mySlides3 sliding-images-left-bottom" src="images/mihai.jpg" style="width:30%; height: 200px">
+  <img class="mySlides3 sliding-images-left-bottom" src="images/maria.jpg" style="width:30%; height: 200px">
+</div>
+
+<div>
+  <img class="mySlides4 sliding-images-right" src="images/protest.jpg" style="width:30%; height: 200px">
+  <img class="mySlides4 sliding-images-right" src="images/soldati.jpg" style="width:30%; height: 200px">
+  <img class="mySlides4 sliding-images-right" src="images/avioane.jpg" style="width:30%; height: 200px">
+</div>
+
+<div>
+  <img class="mySlides5 sliding-images-right-down" src="images/arc.jpg" style="width:30%; height: 200px">
+  <img class="mySlides5 sliding-images-right-down" src="images/parlament.jpg" style="width:30%; height: 200px">
+  <img class="mySlides5 sliding-images-right-down" src="images/oradea.jpg" style="width:30%; height: 200px">
+</div>
+
+<div>
+  <img class="mySlides6 sliding-images-right-bottom" src="images/peles.jpg" style="width:30%; height: 200px">
+  <img class="mySlides6 sliding-images-right-bottom" src="images/transfagarasan.jpg" style="width:30%; height: 200px">
+  <img class="mySlides6 sliding-images-right-bottom" src="images/mountains.jpg" style="width:30%; height: 200px">
+</div>
+
+<div class="jumbotron">
+  <h1>DAD Online Voting System</h1>
+  <h2 align="center" id="alegEuropene">Alegeri europene</h2>
+  <h2 align="center" id="alegPrezidentiale">Alegeri prezidențiale</h2>
+  <h2 align="center" id="alegLocale">Alegeri locale</h2>
+  <h2 align="center" id="alegParlamentare">Alegeri parlamentare</h2>
+  <h2 align="center" id="countdown"></h2>
+  <p class="lead">
+    DAD Voting este o platformă de votare online. Aceasta are ca scop înlocuirea votului fizic și reducerea timpului de votare.
+  </p>
+  <p>
+    George Topârceanu spunea odată "A fi patriot nu e un merit, e o datorie. Numai cine nu socoate iubirea de Țară drept o datorie e în stare să se laude cu ea".
+  </p>
+  <p>
+    Nu uita, România de mâine depinde de tine!
+  </p>
+  <p>Vă rugăm să alegeți tipul de alegeri pentru a introduce reprezentanții.</p>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <form action="/AlegeriEuropene/AlegeriEuropene">
+      <input type="submit" class="button-home" value="Alegeri europene" id="alegeriEuropene" />
+    </form>
+  </div>
+  <div class="col-md-6">
+    <form action="/AlegeriPrezidentiale/AlegeriPrezidentiale">
+      <input type="submit" class="button-home" value="Alegeri prezidențiale" id="alegeriPrezidentiale" />
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3">
+    <form action="/AlegeriLocale/AlegeriLocale">
+      <input type="submit" class="button-home" style="margin-top: -100px; width: 275px" value="Alegeri locale" id="alegeriLocale" />
+    </form>
+  </div>
+  <div class="col-md-3">
+    <input type="button" class="button-home" style="margin-top: -100px" value="Start Vot!" id="startVot" onclick="startVoting()" />
+  </div>
+  <div class="col-md-3">
+    <form action="/AlegeriParlamentare/AlegeriParlamentare">
+      <input type="submit" class="button-home" style="margin-top: -100px" value="Alegeri parlamentare" id="alegeriParlamentare" />
+    </form>
+  </div>
+</div>
+
+<script language="JavaScript" type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="scripts/home.js"></script>

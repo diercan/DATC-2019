@@ -1,0 +1,121 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    border: 0;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 0;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.footer-text {
+    margin-top: 100px;
+    color: #999999;
+    position: absolute;
+}
+
+.button-home {
+    background-color: cornflowerblue;
+    border: none;
+    color: white;
+    padding: 20px 80px;
+    height: 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 0px 110px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.sliding-images-left {
+    float:left;
+    margin-left: -362px;
+    position: center;
+}
+
+.sliding-images-left-down {
+    float: left;
+    margin-left: -362px;
+    margin-top: 250px;
+    position: center;
+}
+
+.sliding-images-left-bottom {
+    float: left;
+    margin-left: -362px;
+    margin-top: 500px;
+    position: center;
+}
+
+.sliding-images-right {
+    float: right;
+    margin-right: -362px;
+    position: center;
+}
+
+.sliding-images-right-down {
+    float: right;
+    margin-right: -362px;
+    margin-top: 250px;
+    position: center;
+}
+
+.sliding-images-right-bottom {
+    float: right;
+    margin-right: -362px;
+    margin-top: 500px;
+    position: center;
+}
+
+.contact-box {
+    border: 1px solid;
+    padding: 5px;
+    width: 480px;
+    height: 150px;
+    box-shadow: 5px 10px #888888;
+}
+
+.contact-image {
+    margin-left: 650px;
+    margin-top: -130px;
+    height: 160px;
+}
+
+.contact-details {
+    text-align: left;
+}
+
+.required {
+    color: red;
+}
+
+.submitButton {
+    background-color: grey;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 150px;
+}
+
+.submitButton:hover {
+    background-color: black; 
+    color: white; 
+}
