@@ -1,0 +1,43 @@
+﻿<h2>Alegeri Parlamentare</h2>
+<form id="myForm" name="alegeriParlamentare">
+  <div class="jumbotron">
+    <p>Vă rugăm introduceți datele corespunzătoare</p>
+
+    <div class="control">
+      <label for="name"><font size="4">Nume: <span class="required">*</span></font></label>
+      <input id="name" name="nume" type="text" size="50" onpaste="restrict(this);" onkeypress="restrict(this);" onkeyup="restrict(this);" style="margin-left: 29px;" required />
+    </div>
+    &nbsp;
+    <div class="control">
+      <label for="prenume"><font size="4">Prenume: <span class="required">*</span></font></label>
+      <input id="prenume" name="prenume" type="text" size="50" onpaste="restrict(this);" onkeypress="restrict(this);" onkeyup="restrict(this);" style="margin-left: 2px;" required />
+    </div>
+    &nbsp;
+    <div class="control">
+      <label for="partid"><font size="4">Partid: <span class="required">*</span></font></label>
+      <input id="partid" name="partid" type="text" size="50" onpaste="restrict(this);" onkeypress="restrict(this);" onkeyup="restrict(this);" style="margin-left: 30px;" required />
+    </div>
+    &nbsp;
+    <div class="control">
+      <label for="detalii"><font size="4">Detalii: <span class="required">*</span></font></label>
+      <textarea id="detalii" name="detalii" type="text" rows="3" style="margin-left: 27px; width:300px" required></textarea>
+    </div>
+    &nbsp;
+    <div class="control">
+      <label for="stop"><font size="4">Vă rugăm să bifați căsuța de mai jos doar în momentul în care nu mai doriți să introduceți alți condidați: </font></label>
+      <input id="stop" name="stop" type="checkbox" class="messageCheckbox" style="margin-left: 10px;" />
+    </div>
+    &nbsp;
+    <div class="control">
+      <label for="more"><font size="4">Toate câmpurile cu <span class="required">*</span> sunt obligatorii! Vă rugăm să le completați înainte de a încărca un candidat.</font></label>
+    </div>
+    &nbsp;
+
+    <button class="submitButton control" style="margin-left:-5px" onclick="submitForm()">
+      Submit
+    </button>
+
+  </div>
+</form>
+
+<script src="~/scripts/alegeri.js"></script>

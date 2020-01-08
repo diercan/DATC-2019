@@ -1,0 +1,4 @@
+POST COMMAND
+This command returns data about a candidate based on 'Partid' and 'NumeCandidat' provided
+
+curl -X POST -H 'Content-Type: application/json' -d '{"Partid":"EXE", "NumeCandidat":"Marean"}' https://0cxr9anbqk.execute-api.eu-central-1.amazonaws.com/dev/get-info

@@ -1,0 +1,40 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+      <!--  <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item> -->
+    </style>
+
+    <style name="df_headdings" parent="df_global">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/black_alpha_75</item>
+    </style>
+    <style name="df_h3" parent="df_headdings">
+        <item name="android:textSize">28sp</item>
+    </style>
+    <style name="df_global">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="df_row_vertical" parent="df_global">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="df4_btn">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">38dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="df4_btn_danger" parent="df4_btn">
+        <item name="android:background">@color/topColor</item>
+    </style>
+    <style name="df_h6" parent="df_headdings">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+</resources>

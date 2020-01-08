@@ -1,0 +1,4 @@
+POST COMMAND:
+Command returns a response as JSON with the image coded in base64
+
+curl -X POST -H 'Content-Type: application/json' -d '{"Imagine":"test.jpeg"}' https://0cxr9anbqk.execute-api.eu-central-1.amazonaws.com/dev/get-data > test.json

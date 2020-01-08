@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DAD Online Voting System</string>
+    <string name="parlamentare"> Alegeri Parlamentare </string>
+    <string name="prezidentiale"> Alegeri Prezidențiale</string>
+    <string name="locale">Alegeri Locale</string>
+    <string name="europene">Alegeri Europene</string>
+    <string name="defaultVoteType"></string>
+</resources>
