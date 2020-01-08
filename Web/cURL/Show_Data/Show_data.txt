@@ -1,0 +1,5 @@
+COMMAND:
+
+This command shows all files in S3
+
+curl -X GET https://0cxr9anbqk.execute-api.eu-central-1.amazonaws.com/dev/show-data

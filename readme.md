@@ -1,9 +1,15 @@
 ## Proiect DATC
-Useful scripts:
-+ sync_repo.sh
-+ commit_files.sh
+Added main project components:
++ Cloud
++ Mobile
++ Web
 
-Added Lambda function:
-+ S3
-+ DynamoDB
+Cloud:
++ AWS: API and Lambdas
+
+Mobile:
++ Andoird application sollution
+
+Web:
++ Web application project
 

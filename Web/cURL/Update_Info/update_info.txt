@@ -1,0 +1,5 @@
+POST COMMAND:
+This command updates information about a candidate.
+All info but 'Voturi' must be provided. Partid and NumeCandidat can't be changed. 
+
+curl -X POST -H 'Content-Type: application/json' -d '{"Partid":"EXE", "NumeCandidat":"Marean", "Varsta":"34", "Proiect":"Bani numai mie"}' https://0cxr9anbqk.execute-api.eu-central-1.amazonaws.com/dev/update-info

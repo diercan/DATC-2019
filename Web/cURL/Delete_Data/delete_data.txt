@@ -1,0 +1,4 @@
+DELETE COMMAND:
+This commandd deletes a file in S3 based on 'Fisier' as the name of the file you want to delete.
+
+curl -X DELETE -H 'Content-Type: application/json' -d '{"Fisier":"test.jpeg"}' https://0cxr9anbqk.execute-api.eu-central-1.amazonaws.com/dev/delete-data

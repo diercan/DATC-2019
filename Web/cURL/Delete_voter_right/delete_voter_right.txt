@@ -1,0 +1,5 @@
+DELETE COMMAND:
+
+Deletes the right of a person to vote.
+
+curl -X DELETE -H 'Content-type: application/json' -d '{"Judet":"BH", "CNP":"4444444444444"}' https://0cxr9anbqk.execute-api.eu-central-1.amazonaws.com/dev/delete-voter-right

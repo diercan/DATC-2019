@@ -1,0 +1,32 @@
+﻿<h2>Votanți</h2>
+<form id="myForm" name="votanți">
+  <div class="jumbotron">
+    <p>Vă rugăm introduceți datele corespunzătoare</p>
+
+    <div class="control">
+      <label for="cnp"><font size="4">CNP: <span class="required">*</span></font></label>
+      <input id="cnp" name="cnp" type="text" size="50" style="margin-left: 12px;" required />
+    </div>
+    &nbsp;
+    <div class="control">
+      <label for="judet"><font size="4">Județ: <span class="required">*</span></font></label>
+      <input id="judet" name="judet" type="text" size="50" onpaste="restrict(this);" onkeypress="restrict(this);" onkeyup="restrict(this);" style="margin-left: px;" required />
+    </div>
+    &nbsp;
+
+    <button class="submitButton control" style="margin-left:-5px" onclick="submitForm()">
+      Submit
+    </button>
+    &nbsp;
+
+    <button class="submitButton control" style="margin-left:-5px" type="submit" onclick="veziVotanti()" >Vezi votanți</button>
+    &nbsp;
+
+
+  </div>
+</form>
+
+<script language="JavaScript" type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/scripts/votanti.js"></script>
+
